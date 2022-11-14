@@ -32,29 +32,42 @@ public class ProjectRessource{
     @Inject
     Logger logger;
 
+    static private Map<ProjectJson> projects = new HashMap<>();
+
     @POST 
     @Consumes(MediaType.APPLICATION_JSON)
+    @Produces("application/example")
     public createProject(ProjectJson json) {
          logger.info(json);
+         UUID id = UUID.randomUUID();
+         this.projects.put(id.toString(), json); // json speichern in Liste
+         return id.toString();
     }
 
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String getProject() {
-        return "hello";
+    @Path("{id")
+    @Produces(MediaType.APPLICATION_JSON))
+    public String getProject(@PathParam("id") String id) {
+        return projects.get(id);
     }
 
     @DELETE
+    @Path("{id")
     public void delteProject(){
-
+        projects.remove(id); 
     }
 
     @PUT 
+    @Path("{id")
     public void putProject(){
-
+        projects.put(id, json); 
     }
 
     
     
     
 }
+
+
+
+
