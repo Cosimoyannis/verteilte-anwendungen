@@ -19,6 +19,15 @@ docker build -t testimage .
 docker image ls     
 docker run -d -p 8080:80 testimage 
 
+Commands aufgabe 2:
+
+// config datein öffnen und kopieren 
+docker exec -it nginx-va-1 /bin/bash    
+cd etc
+cd nginx
+cat nginx.conf // cat = öffnen 
+
+
 ## Aufgabestellung
 
 1.  **(4P)** Schreiben Sie ein Dockerfile mit dem Sie das [offizielle Image des NGINX von Docker Hub](https://hub.docker.com/_/nginx) erweitern. Erstellen Sie eine individuelle HTML Seite, die die Matrikelnummern der Gruppenteilnehmer darstellt und die Namen der Gruppenmitglieder als Meta Tag „author“ ausliefert. Starten Sie einen Container mit ihrem eigenen Image mittels ``$ docker run -d -p 8080:80 verteilte-anwendungen-nginx`` und stellen Sie sicher, dass die erstellte HTML Datei unter [http://localhost:8080/verteilte-anwendungen/test.html](http://localhost:8080/verteilte-anwendungen/test.html) von dem Container richtig ausgeliefert wird.
