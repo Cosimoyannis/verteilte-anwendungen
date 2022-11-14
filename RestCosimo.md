@@ -4,8 +4,8 @@ Projekte können erstellt werden und mit usern verbunden werden.
 Es können mehrere Versionen erstellt und aufgerufen werden. 
 
 {
-    "name"= {1,2},
-    "user"= {1,2},
+    "name": {1,2},
+    "user": {1,2},
 }
 
 
