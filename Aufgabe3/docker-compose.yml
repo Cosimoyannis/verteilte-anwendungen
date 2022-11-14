@@ -4,3 +4,4 @@ services:
     image: verteilte-anwendungen-nginx:latest
     ports:
      - "8181:80"
+    volumes: ./nginx.conf :/etc/nginx/nginx.conf
